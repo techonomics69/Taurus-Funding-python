@@ -1,0 +1,70 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <div class="jumbotron jumbotron-fluid">
+        <table>
+            <tbody>
+            <tr>
+                <td>
+                    <h1 class="display-4">Python Launcher</h1>
+                    <p class="Xlead">Run and explore DocuSign Click API code examples with Authorization Code Grant or JWT Grant authentication</p>
+                </td>
+                <td>
+                    <img src="/static/assets/banner-code.png"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container" style="margin-top: 40px" id="index-page">
+
+        {% if show_doc %}
+        <p><a target='_blank'
+              href='{{ documentation | safe }}'>Documentation</a> on using JWT
+            or Authorization Code Grant from a Python Flask application.</p>
+        {% endif %}
+
+        <h4 id="example001">1. <a href="eg001">Create a clickwrap</a></h4>
+        <p>Creates a clickwrap that you can embed in your website or app.</p>
+        <p>API method used:
+            <a target='_blank'
+               href="https://developers.docusign.com/docs/click-api/reference/accounts/clickwraps/createclickwrap/">ClickWraps::createClickwrap</a>
+        </p>
+        <h4 id="example002">2. <a href="eg002">Activate a clickwrap</a></h4>
+        <p>Activates a new clickwrap that you have already created.</p>
+        <p>API method used:
+            <a target='_blank'
+               href="https://developers.docusign.com/docs/click-api/reference/accounts/clickwraps/updateclickwrapversion">ClickWraps::updateClickwrapVersion</a>
+        </p>
+        <h4 id="example003">3. <a href="eg003">Create a new clickwrap
+            version</a></h4>
+        <p>Creates a new version of a clickwrap.</p>
+        <p>API method used:
+            <a target='_blank'
+               href="https://developers.docusign.com/docs/click-api/reference/accounts/clickwraps/createclickwrapversion/">ClickWraps::createClickwrapVersion</a>
+        </p>
+        <h4 id="example004">4. <a href="eg004">Get a list of clickwraps</a>
+        </h4>
+        <p>Gets a list of clickwraps associated with a specific DocuSign user.</p>
+        <p>API method used:
+            <a target='_blank'
+               href="https://developers.docusign.com/docs/click-api/reference/accounts/clickwraps/getclickwraps">ClickWraps::getClickwraps</a>
+        </p>
+        <h4 id="example005">5. <a href="eg005">Get clickwrap responses</a>
+        </h4>
+        <p>Gets user responses to your clickwrap agreements.</p>
+        <p>API method used:
+            <a target='_blank'
+               href="https://developers.docusign.com/docs/click-api/reference/accounts/clickwraps/getclickwrapagreements">ClickWraps::getClickwrapAgreements</a>
+        </p>
+    </div>
+
+    <!-- anchor-js is only for the index page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+    <script>anchors.options.placement = 'left'; anchors.add('h4')</script>
+
+    {% endblock %}
